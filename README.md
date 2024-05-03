@@ -32,3 +32,15 @@ Before installation, you need to have the following:
 you need to install the 2 required plugins:
 
 [dart and flutter plugin](https://docs.flutter.dev/get-started/editor?tab=androidstudio)
+
+
+
+## STEPS
+
+1. In your terminal, [clone](https://docs.github.com/fr/repositories/creating-and-managing-repositories/cloning-a-repository) the repository to your local machine
+
+2. After unzip and start with vscode
+
+3. oh yess :blink: get an emulator a physical android device(withandroid 11 minimum)
+
+
