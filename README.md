@@ -26,7 +26,7 @@ Before installation, you need to have the following:
 [vscode installed](https://code.visualstudio.com/docs/setup/setup-overview)
 [install flutter](https://radixweb.com/blog/install-flutter-on-windows-mac-and-android)
 
-##installation of plugins
+## installation of plugins
 
 
 you need to install the 2 required plugins:
