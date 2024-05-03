@@ -43,4 +43,33 @@ you need to install the 2 required plugins:
 
 3. oh yess 👺 get an emulator <b>OR</b>  a physical android device(with android 11 minimum)
 
+## MyCv
+-Problem Statement
+-  Millions struggle to build impactful resumes. Traditional formats are time-consuming, inaccessible, and don't tailor to specific jobs. This hinders interview chances.
+  -Solution
+        MyCV simplifies resume creation with AI. It analyzes your skills (from uploads like LinkedIn profiles) and highlights what matters in job descriptions, making resumes impactful and accessible (screen readers, fonts) for all.
+   While MyCV focuses on empowering job seekers, there's potential for an  "Organizations" feature with limitations:
+
+Challenge Faced By Organiztions :  Analyzing resumes for skills and experience without opening them requires advanced NLP capabilities that might not be fully available yet.
+    Organizations can offer MyCV as a tool for applicants during the application process.
+    Applicants upload resumes to MyCV, which then analyzes them and generates a standardized skills summary for employers.
+    This reduces manual resume screening time while still providing valuable insights.
+
+## How to run it 
+- create a virtual environment
+- for windows 
+  pip install virtualenv
+  virtualenv env
+  .\env\Scripts\activate
+  or 
+ python -m venv env
+.\env\Scripts\activate
+- for linux
+pip install virtualenv
+virtualenv env
+source env/bin/activate
+
+- install dependencies using pip install -r requirements.txt
+- now you can run the code using streamlit run cv.py
+
 
