@@ -20,3 +20,13 @@
  
  -[google API](https://cloud.google.com/apis?hl=EN)
  
+# Prerequisites
+Before installation, you need to have the following:
+
+[vscode installed](https://code.visualstudio.com/docs/setup/setup-overview)
+[install flutter](https://radixweb.com/blog/install-flutter-on-windows-mac-and-android)
+
+##installation of plugins
+you need to install the 2 required plugins:
+
+[dart and flutter plugin](https://docs.flutter.dev/get-started/editor?tab=androidstudio)
