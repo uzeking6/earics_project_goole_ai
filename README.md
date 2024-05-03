@@ -41,6 +41,6 @@ you need to install the 2 required plugins:
 
 2. After unzip and start with vscode
 
-3. oh yess :blink: get an emulator a physical android device(withandroid 11 minimum)
+3. oh yess 👺 get an emulator a physical android device(withandroid 11 minimum)
 
 
