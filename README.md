@@ -27,6 +27,8 @@ Before installation, you need to have the following:
 [install flutter](https://radixweb.com/blog/install-flutter-on-windows-mac-and-android)
 
 ##installation of plugins
+
+
 you need to install the 2 required plugins:
 
 [dart and flutter plugin](https://docs.flutter.dev/get-started/editor?tab=androidstudio)
