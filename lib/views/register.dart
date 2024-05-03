@@ -9,7 +9,7 @@ class Register extends StatefulWidget {
   const Register({Key? key, required String title}) : super(key: key);
 
   @override
-  State<Register> createState() => _RegisterState();
+  _RegisterState createState() => _RegisterState();
 }
 
 class _RegisterState extends State<Register> {
@@ -17,6 +17,15 @@ class _RegisterState extends State<Register> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final passwordController = TextEditingController();
+
+  String? validatePassword(String? value) {
+    if (value!.isEmpty) {
+      return "Please enter a password";
+    } else if (value.length < 6) {
+      return "Password must be at least 6 characters long";
+    }
+    return null;
+  }
 
   String? ValidateEmail(String? email) {
     RegExp emailRegex = RegExp(r'^[\w\.-]+@[\w-]+\.\w{2,3}(\.\w{2,3})?$');
@@ -58,6 +67,7 @@ class _RegisterState extends State<Register> {
         body: SingleChildScrollView(
           // keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           child: Form(
+            key: _formKey,
             child: Container(
               padding: EdgeInsets.all(35),
               child: Column(
@@ -100,10 +110,10 @@ class _RegisterState extends State<Register> {
                           borderSide: BorderSide(
                               color: Color.fromRGBO(60, 193, 177, 100))),
                     ),
-                    validator: (name) => name!.length > 3
-                        ? 'Name should be atleast 3 characters'
-                        : null,
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                    // validator: (name) => name!.length > 3
+                    //     ? 'Name should be atleast 3 characters'
+                    //     : null,
+                    // autovalidateMode: AutovalidateMode.onUserInteraction,
                   ),
                   SizedBox(height: 10),
                   TextFormField(

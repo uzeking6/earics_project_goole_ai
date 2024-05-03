@@ -1,3 +1,5 @@
+import 'package:avatar_glow/avatar_glow.dart';
+import 'package:firstapp/views/camera.dart';
 import 'package:firstapp/views/intensity_settings.dart';
 import 'package:firstapp/views/settings.dart';
 import 'package:flutter/cupertino.dart';
@@ -13,7 +15,12 @@ class HardHearing extends StatefulWidget {
 }
 
 class _HardHearingState extends State<HardHearing> {
+  HardHearing speechToText = HardHearing(
+    title: 'speechtotext',
+  );
+
   var height, width;
+  var islistening = false;
 
   @override
   Widget build(BuildContext context) {
@@ -114,6 +121,11 @@ class _HardHearingState extends State<HardHearing> {
                     // width: 500,
                   ),
                   const SizedBox(height: 50),
+                  // const Icon(
+                  //   Icons.close,
+
+                  //   size: 40,
+                  // ),
                 ],
               ),
             ),
@@ -131,9 +143,43 @@ class _HardHearingState extends State<HardHearing> {
             child: Icon(Icons.volume_up),
           ),
           SizedBox(width: 16),
+          AvatarGlow(
+              animate: islistening,
+              duration: Duration(milliseconds: 2000),
+              glowColor: Color.fromRGBO(60, 193, 177, 1),
+              repeat: true,
+              // repeatPauseDuration: Duration(milliseconds: 100),
+              // showTwoGlows:true,
+              child: GestureDetector(
+                onTapDown: (details) {
+                  setState(() {
+                    islistening = true;
+                  });
+                },
+                onTapUp: (details) {
+                  setState(() {
+                    islistening = false;
+                  });
+                },
+                child: CircleAvatar(
+                  backgroundColor: Color.fromRGBO(60, 193, 177, 1),
+                  radius: 35,
+                  child: Icon(islistening ? Icons.mic : Icons.mic_none,
+                      color: Colors.white),
+                ),
+              )),
+          const SizedBox(
+            width: 150,
+          ),
           FloatingActionButton(
-            onPressed: () {},
-            child: Icon(Icons.mic),
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) {
+                  return Camera();
+                },
+              ));
+            },
+            child: Icon(Icons.camera_alt_outlined),
           ),
         ],
       ),

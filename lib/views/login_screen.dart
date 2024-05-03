@@ -1,6 +1,7 @@
 import 'package:firstapp/views/register.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:firstapp/room/join_room.dart'; // Import JoinRoom class
 
 import '../models/button.dart';
 
@@ -14,21 +15,18 @@ class loginScreen extends StatefulWidget {
 class _loginScreenState extends State<loginScreen> {
   @override
   Widget build(BuildContext context) {
-    MaterialPageRoute(
-      builder: (context) => const Register(
-        title: 'SplashScreen',
-      ),
-    );
     final double screenHeight = MediaQuery.of(context).size.height;
-    // final double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         actions: [
           GestureDetector(
             onTap: () {
-              // Navigator.of(context).push(MaterialPageRoute(
-              //   builder: (BuildContext context) => JoinRoom(),
-              // ));
+              //   // Navigate to JoinRoom page
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => JoinRoom()),
+              );
             },
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -45,16 +43,16 @@ class _loginScreenState extends State<loginScreen> {
                       color: Color.fromRGBO(122, 198, 189, 1),
                     ),
                   ),
+                  const SizedBox(width: 5),
                   Icon(
-                    Icons
-                        .arrow_forward, // You can use any arrow icon you prefer
+                    Icons.arrow_forward,
                     color: Color.fromRGBO(122, 198, 189, 1),
-                    size: 20.0, // Adjust the size of the arrow icon as needed
+                    size: 20.0,
                   ),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
       backgroundColor: Colors.white,
@@ -69,59 +67,18 @@ class _loginScreenState extends State<loginScreen> {
                 "lib/assets/image.png",
                 height: screenHeight * 0.3,
               ),
-              // SizedBox(height: screenHeight * 0.02),
-              const Text(
-                'Earics',
-                style: TextStyle(
-                  //fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.bold,
-                  fontSize: 32.0,
-                  color: Color.fromRGBO(122, 198, 189, 1),
-                ),
-              ),
-
-              //SizedBox(height: screenHeight * 0.02),
-              const Center(
-                child: Text(
-                  'Fastest communication ',
-                  style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20.0,
-                      color: Colors.black),
-                ),
-              ),
-              const Center(
-                child: Text(
-                  'between the deaf and hearing ',
-                  style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20.0,
-                      color: Colors.black),
-                ),
-              ),
-              const Center(
-                child: Text(
-                  'people',
-                  style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20.0,
-                      color: Colors.black),
-                ),
-              ),
-              const SizedBox(height: 100),
-
+              // ... other UI elements
               Button(
-                  text: "Get Started with earics",
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                            Register(title: 'register')));
-                  },
-                  width: screenHeight * 0.5,
-                  color: Color.fromRGBO(60, 193, 177, 100)),
+                text: "Get Started with earics",
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (BuildContext context) =>
+                        Register(title: 'register'),
+                  ));
+                },
+                width: screenHeight * 0.5,
+                color: Color.fromRGBO(60, 193, 177, 100),
+              ),
             ],
           ),
         ),

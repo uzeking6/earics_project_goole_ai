@@ -1,3 +1,4 @@
+import 'package:firstapp/views/camera.dart';
 import 'package:firstapp/views/choice_screen.dart';
 import 'package:firstapp/views/hard_of_hearing.dart';
 import 'package:firstapp/views/radio_screen.dart';
